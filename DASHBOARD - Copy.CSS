@@ -1,0 +1,96 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+     background-image: url('image1.png'); /* Example online image */
+    background-size: cover;
+    font-family: 'Arial', sans-serif;
+    
+    
+}
+
+body {
+    background-color: #f0f4f8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+   
+ 
+}
+
+.dashboard-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.dashboard-card {
+    background-color: #ffffff9c;
+    border-radius: 20px;
+    box-shadow: 0px 8px 25px rgba(255, 255, 255, 0.15);
+    overflow: hidden;
+    width: 450px;
+    text-align: center;
+    padding: 40px;
+}
+
+.profile-image {
+    margin-bottom: 25px;
+}
+
+.profile-image img {
+    border-radius: 50%;
+    width: 220px;
+    height: 220px;
+    object-fit: cover;
+    border: 5px solid #ffffff;
+}
+
+.student-details {
+    margin-bottom: 30px;
+}
+
+.student-name {
+    font-size: 35px;
+    color: #000000;
+    margin-bottom: 15px;
+}
+
+.student-details p {
+    font-size: 25px;
+    color: #000000;
+    margin-bottom: 10px;
+}
+
+.student-details strong {
+    color: #175a70;
+}
+
+/* Tabs Styling */
+.nav-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.tab-button {
+    background-color: #008cba;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    cursor: pointer;
+    border-radius: 8px;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+}
+
+.tab-button:hover {
+    background-color: #005f87;
+}
+
+.tab-button:active {
+    background-color: #004f6f;
+}

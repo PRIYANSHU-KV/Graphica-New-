@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAMRAT ASHOKA House Details</title>
+    <link rel="stylesheet" href="house-details.css">
+</head>
+<body>
+    <div class="house-container">
+        <!-- House Logo and Motto -->
+        <div class="house-header">
+            <img src="ashoka.jpg" alt="samrat ashoka logo" class="house-logo">
+            <div class="house-motto">
+                <h1><b>SAMRAT ASHOKA</b></h1>
+                <h2><b>"Rise and Conquer"</b></h2>
+            </div>
+        </div>
+
+        <!-- Navigation Tabs for House Details -->
+        <div class="tabs">
+            <button class="tab-button" onclick="showDetails('faculty')">Faculty In-Charge</button>
+            <button class="tab-button" onclick="showDetails('mentor')">BE Mentor</button>
+            <button class="tab-button" onclick="showDetails('captain')">Captain</button>
+            <button class="tab-button" onclick="showDetails('vice-captain')">Vice Captain</button>
+        </div>
+
+        <!-- Details Section -->
+        <div id="details-section">
+            <div id="faculty" class="details-content">
+                <h2>Faculty In-Charge</h2>
+                <p><strong>Name:</strong> Dr. Deepika Birari (IT)</p>
+                <p><strong>Contact:</strong> ABC@example.com</p>
+                <p><strong>Name:</strong> Mr. Anup Kadam (COMP)</p>
+                <p><strong>Contact:</strong> ABC@example.com</p>
+                <p><strong>Name:</strong> Ms. Gouri Bhasale (MECH)</p>
+                <p><strong>Contact:</strong> ABC@example.com</p>
+                <p><strong>Name:</strong> Mr. Pravin Sange (E&TC)</p>
+                <p><strong>Contact:</strong> ABC@example.com</p>
+            </div>
+            <div id="mentor" class="details-content">
+                <h2>BE Mentor</h2>
+                <p><strong>Name:</strong> Ayush Ojha (BE E&NTC - B)</p>
+                <p><strong>Contact:</strong> BEMENTOR@example.com</p>
+                <p><strong>Name:</strong> Akriti Singh (BE E&TC - A)</p>
+                <p><strong>Contact:</strong> BEMENTOR@example.com</p>
+
+            </div>
+            <div id="captain" class="details-content">
+                <h2>Captain</h2>
+                <p><strong>Name:</strong> Ankit Yadav (TE E&TC - B)</p>
+                <p><strong>Contact:</strong> CAPTAIN@example.com</p>
+                <p><strong>Name:</strong> Tanisha Sharma (TE E&TC - A)</p>
+                <p><strong>Contact:</strong> CAPTAIN@example.com</p>
+                
+            </div>
+            <div id="vice-captain" class="details-content">
+                <h2>Vice Captain</h2>
+                <p><strong>Name:</strong> Akash Singh (SE E&TC - B)</p>
+                <p><strong>Contact:</strong> VICECAPTAIN.patil@example.com</p>
+                <p><strong>Name:</strong> Sunanda Reddy (SE IT - A)</p>
+                <p><strong>Contact:</strong> VICECAPTAIN@example.com</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="house-details.js"></script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css"> <!-- Link to the CSS file -->
+</head>
+<body>
+
+    <div class="dashboard-container">
+        <div class="dashboard-card">
+            <!-- Student Image -->
+            <div class="profile-image">
+                <img src="profile.jpg" alt="Student Photo">
+            </div>
+            
+            <!-- Student Information -->
+            <div class="student-details">
+                <h2 class="student-name" id="studentName"></h2>
+               
+                <p><strong>Registration No:</strong> <span id="regNumber"></span></p>
+                <p><strong>House Allotted:</strong> <span id="houseAllotted"></span></p>
+                <p><strong>Clubs:</strong> <span id="clubsList"></span></p>
+            </div>
+
+            <!-- Navigation Tabs -->
+            <div class="nav-tabs">
+                <button class="tab-button" onclick="openNewTab('house-details.html')">House Details</button>
+                <button class="tab-button" onclick="openNewTab('club-details.html')">Club Details</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Function to open a new page
+        function openNewTab(pageUrl) {
+            window.location.href = pageUrl;
+        }
+
+        // Retrieve query parameters from URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const username = urlParams.get('username');
+        const regNumber = urlParams.get('regNumber');
+        const house = urlParams.get('house');
+        const club1 = urlParams.get('club1');
+        const club2 = urlParams.get('club2');
+        const club3 = urlParams.get('club3');
+
+        // Populate the dashboard with the data
+        document.getElementById('studentName').textContent = username;
+        document.getElementById('regNumber').textContent = regNumber;
+        document.getElementById('houseAllotted').textContent = house;
+        document.getElementById('clubsList').textContent = [club1, club2, club3].filter(Boolean).join(', ');
+    </script>
+</body>
+</html>

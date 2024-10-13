@@ -1,2 +1,0 @@
-# Graphica-New-
-Graphica

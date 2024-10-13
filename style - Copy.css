@@ -1,0 +1,70 @@
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    font-family: Arial, sans-serif;
+    background-image: url('loogin.jpg'); /* Replace with your image path */
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+}
+.container {
+    background-color: rgba(43, 36, 36, 0.7); /* Darker semi-transparent background */
+    padding: 30px;
+    border-radius: 15px;
+    transition: transform 0.3s;
+}
+.container:hover {
+    transform: scale(1.05); /* Scale effect on hover */
+}
+h1 {
+    margin-bottom: 20px;
+    font-size: 36px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+.login-button {
+    padding: 15px 30px;
+    font-size: 18px;
+    color: white;
+    background-color: #007BFF;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+.login-button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05); /* Scale effect on hover */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* styles.css */
