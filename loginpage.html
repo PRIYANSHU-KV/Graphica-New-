@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login and Club Selection</title>
+    <link rel="stylesheet" href="login.css"> <!-- Link to the CSS file -->
+</head>
+<body>
+    <div class="container">
+        <h1>Login</h1>
+        <form id="loginForm">
+            <!-- Username and Registration Input -->
+            <input type="text" id="username" placeholder="Username" required>
+            <input type="text" id="regNumber" placeholder="Registration Number" required>
+
+            <!-- House Selection -->
+            <div class="house-selection">
+                <label><span style="color: white;">Select house:</span></label>
+                <div class="dropdown-row">
+                    <select id="house">
+                        <option value="">Select House</option>
+                        <option value="Samrat Ashoka">Samrat Ashoka</option>
+                        <option value="Rajakrishna Devray">Rajakrishna Devray</option>
+                        <option value="Maharana Pratap">Maharana Pratap</option>
+                        <option value="Chattrapati Shivaji">Chattrapati Shivaji</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Club Selection Section -->
+            <div class="club-selection">
+                <label><span style="color: white;">Select house:</span></label>
+                <div class="dropdown-row">
+                    <select id="club1" onchange="updateDropdowns(1)">
+                        <option value="">Club 1</option>
+                        <option value="Cultural Club">Cultural Board</option>
+                        <option value="Technical Club">Technical Board</option>
+                        <option value="Sports Club">Sports Club</option>
+                        <option value="Cycling Club">Cycling Club</option>
+                        <option value="Fine Arts Club">Fine Arts Club</option>
+                        <option value="ISDF Club">ISDF Club</option>
+                        <option value="EV Club">EV Club</option>
+                        <option value="Natures Club">Natures Club</option>
+                        <option value="NSS Club">NSS Club</option>
+                        <option value="DDQ Club">DDQ Club</option>
+                        <option value="PR Club">PR Club</option>
+                        <option value="Maths Club">Maths Club</option>
+                        <option value="Magboard">Magboard</option>
+                        <option value="SAE Club">SAE Club</option>
+                        <option value="CAER Club">CAER Club</option>
+                        <option value="OSS Club">OSS Club</option>
+                        <option value="CP Club">CP Club</option>
+                        <option value="GDXR Club">GDXR Club</option>
+                        <option value="GDSC Club">GDSC Club</option>
+                        <option value="Radio Raga">Radio Raga</option>
+                        <option value="Spiritual Club">Spiritual Club</option>
+                        
+                    </select>
+                    <select id="club2" onchange="updateDropdowns(2)" disabled>
+                        <option value="">Club 2</option>
+                    </select>
+                    <select id="club3" onchange="updateDropdowns(3)" disabled>
+                        <option value="">Club 3</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Login Button -->
+            <button type="submit" class="login-button">Login</button>
+        </form>
+    </div>
+
+    <script>
+        // Initial list of clubs
+        const clubs = [
+            "Cultural Club",
+            "Technical Club",
+            "Sports Club",
+            "Cycling Club",
+           "Fine Arts Club",
+            "ISDF Club",
+            "EV Club",
+            "Natures Club",
+            "NSS Club",
+            "DDQ Club",
+            "PR Club",
+            "Maths Club",
+            "Magboard",
+            "SAE Club",
+            "CAER Club",
+            "OSS Club",
+            "CP Club",
+            "GDXR Club",
+            "GDSC Club",
+            "Radio Raga",
+            "Spiritual Club",
+
+        ];
+
+        // Function to update dropdowns dynamically
+        function updateDropdowns(chosenDropdown) {
+            const selectedClubs = [];
+
+            // Gather all selected clubs
+            for (let i = 1; i <= chosenDropdown; i++) {
+                const clubValue = document.getElementById(`club${i}`).value;
+                if (clubValue) {
+                    selectedClubs.push(clubValue);
+                }
+            }
+
+            // Enable and update options in the next dropdowns
+            for (let i = chosenDropdown + 1; i <= 3; i++) {
+                const nextDropdown = document.getElementById(`club${i}`);
+                nextDropdown.disabled = false;
+                nextDropdown.innerHTML = `<option value="">Club ${i}</option>`;
+
+                // Add only clubs that haven't been selected yet
+                clubs.forEach(club => {
+                    if (!selectedClubs.includes(club)) {
+                        const option = document.createElement("option");
+                        option.value = club;
+                        option.text = club;
+                        nextDropdown.appendChild(option);
+                    }
+                });
+            }
+
+            // Disable subsequent dropdowns if the current one is unselected
+            if (!document.getElementById(`club${chosenDropdown}`).value) {
+                for (let i = chosenDropdown + 1; i <= 3; i++) {
+                    const nextDropdown = document.getElementById(`club${i}`);
+                    nextDropdown.disabled = true;
+                    nextDropdown.innerHTML = `<option value="">Club ${i}</option>`;
+                }
+            }
+        }
+
+        // Handle the form submission
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form submission
+            const username = document.getElementById('username').value;
+            const regNumber = document.getElementById('regNumber').value;
+            const house = document.getElementById('house').value;
+            const club1 = document.getElementById('club1').value;
+            const club2 = document.getElementById('club2').value;
+            const club3 = document.getElementById('club3').value;
+
+            // Redirect to dashboard and pass data via URL parameters
+            window.location.href = `dashboard.html?username=${username}&regNumber=${regNumber}&house=${house}&club1=${club1}&club2=${club2}&club3=${club3}`;
+        });
+    </script>
+</body>
+</html>
